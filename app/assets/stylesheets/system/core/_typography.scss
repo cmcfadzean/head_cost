@@ -9,27 +9,19 @@ body {
   text-size-adjust: 100%;
   font-family: 'Inter', sans-serif;
   font-size: system-font-size(sm);
-  color: system-color(gray,800);
+  color: system-color(gray,700);
 }
 @supports (font-variation-settings: normal) {
   body { font-family: 'Inter var', sans-serif; }
 }
 h1 {
   font-weight: 900;
-  margin-bottom: system-spacing(sm);
   color: system-color(gray,900);
 }
 h2,h3,h4,h5,h6,strong {
-  font-weight: 800;
+  font-weight: 900;
   color: system-color(gray,900);
-}
-th {
-  color: system-color(gray,400);
 }
 a {
   font-weight: 600;
-  color: system-color(gray,900);
-  &:hover {
-    color: system-color(primary, 600);
-  }
 }

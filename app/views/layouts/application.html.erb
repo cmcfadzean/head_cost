@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AppStrap</title>
+    <title>HeadCost</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -18,6 +17,8 @@
       <%= link_to "Sign up", new_user_registration_path, :class => '#'  %>
       <%= link_to "Login", new_user_session_path, :class => '#'  %>
     <% end %>
+    <%= link_to 'Departments', departments_path %>
+    <%= link_to 'Employees', employees_path %>
     <%= yield %>
     <%= component "alert", id: "notice", message: notice %>
     <%= component "alert", id: "alert", message: alert %>
