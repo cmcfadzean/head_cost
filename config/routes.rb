@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :employees
+  resources :employees do
+    resources :salaries
+  end
   resources :departments
   devise_for :users
   root 'employees#index'
