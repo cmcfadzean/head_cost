@@ -1,6 +1,10 @@
-<h1>Employees</h1>
-<h2><%= number_to_currency(@total_cost, :unit => "$") %></h2>
-<table>
+<%= component "container" do %>
+  <%= component "heading", title: "Employees" do %>
+    <%= component "button", link: new_employee_path, type: "primary" do %>
+      <i class="lni lni-plus"></i> Add Employee
+    <% end %>
+  <% end %>
+  <table>
   <thead>
     <tr>
       <th>Department</th>
@@ -33,7 +37,5 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Employee', new_employee_path %>
+<% end %>
+  <h2><%= number_to_currency(@total_cost, :unit => "$") %></h2>

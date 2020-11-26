@@ -24,6 +24,6 @@ a {
   color: system-color(gray,900);
   &:hover {
     text-decoration: none;
-    color: system-color(teal,500);
+    color: $system-primary;
   }
 }

@@ -4,8 +4,12 @@
     padding: system-spacing(xs) system-spacing(sm);
     border-radius: system-border(radius);
     &--primary {
-      background: system-color(teal, 700);
+      background: $system-primary;
+      border: 1px solid darken($system-primary, 2%);
       color: #fff;
+      &:hover {
+        color: lighten($system-primary, 50%);
+      }
     }
     &--secondary {
 
