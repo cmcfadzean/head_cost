@@ -1,0 +1,28 @@
+.system {
+  &-footer {
+    padding: system-spacing(sm);
+    border-top: system-border(default);
+    &__content {
+      display: flex;
+      align-items: center;
+    }
+    &__left {
+      padding-right: system-spacing(sm);
+    }
+    &__body {
+      flex: 1;
+      text-align: left;
+    }
+    &__right {
+      padding-left: system-spacing(sm);
+      text-align: right;
+    }
+    img {
+      filter: grayscale(100%);
+    }
+    a {
+      color: system-color(gray, 400);
+      margin-right: system-spacing(sm);
+    }
+  }
+}

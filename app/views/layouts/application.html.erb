@@ -11,10 +11,10 @@
 
   <body>
     <%= component "header" do %>
-      <%= link_to 'Departments', departments_path %>
-      <%= link_to 'Employees', employees_path %>
+      <%= component "nav" %>
     <% end %>
     <%= yield %>
+    <%= component "footer" %>
     <%= component "alert", id: "notice", message: notice %>
     <%= component "alert", id: "alert", message: alert %>
   </body>
