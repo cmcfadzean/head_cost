@@ -6,6 +6,13 @@ class EmployeesController < ApplicationController
   # GET /employees.json
   def index
     @employees = current_user.employees
+    @total_cost = BigDecimal.new(0)
+    @employees.each do |employee|
+      unless employee.salaries.last.nil?
+        @salary = employee.salaries.last.salary
+        @total_cost += @salary
+      end
+    end
   end
 
   # GET /employees/1

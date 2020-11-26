@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Employees</h1>
-
+<h2><%= number_to_currency(@total_cost, :unit => "$") %></h2>
 <table>
   <thead>
     <tr>
@@ -16,13 +14,23 @@
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
-        <td><%= employee.department %></td>
+        <td><%= employee.department.title %></td>
         <td><%= employee.name %></td>
         <td><%= employee.title %></td>
         <td><%= employee.user %></td>
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
         <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to employee_salaries_path(employee) do %>
+          <% if employee.salaries.last.nil? %>
+            Add Salary
+          <% else %>
+            <div class="system-item__stats">
+              <strong><%= number_to_currency(employee.salaries.last.salary, :unit => "$") %></strong><br>
+              <%= time_ago_in_words(employee.salaries.last.effective) %>
+            </div>
+          <% end %>
+        <% end %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Salary:</b>
+  <%= @salary.salary %>
+</p>
+
+<p>
+  <b>Effective:</b>
+  <%= @salary.effective %>
+</p>
+
+
+<%= link_to 'Edit', edit_employee_salary_path(@salary.employee, @salary) %> |
+<%= link_to 'Back', employee_salaries_path(@salary.employee) %>
