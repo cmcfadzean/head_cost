@@ -11,7 +11,10 @@
 
   <body>
     <%= component "header" do %>
-      <%= component "nav" %>
+      <%= component "nav" do %>
+        <%= link_to 'Departments', departments_path, class: "system-nav__link #{current_class?(departments_path)}" %>
+        <%= link_to 'Employees', employees_path, class: "system-nav__link #{current_class?(employees_path)} #{current_class?('/')}" %>
+      <% end %>
     <% end %>
     <%= yield %>
     <%= component "footer" %>
