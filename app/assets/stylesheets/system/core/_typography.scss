@@ -8,7 +8,7 @@ body {
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   font-family: 'Inter', sans-serif;
-  font-size: system-font-size(sm);
+  font-size: system-font-size();
   color: system-color(gray,700);
 }
 @supports (font-variation-settings: normal) {
@@ -24,4 +24,7 @@ h2,h3,h4,h5,h6,strong {
 }
 a {
   font-weight: 600;
+  &:hover {
+    text-decoration: none;
+  }
 }

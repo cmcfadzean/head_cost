@@ -1,0 +1,20 @@
+.system {
+  &-header {
+    padding: system-spacing(sm);
+    &__content {
+      display: flex;
+      align-items: center;
+    }
+    &__left {
+      padding-right: system-spacing(sm);
+    }
+    &__body {
+      flex: 1;
+      text-align: left;
+    }
+    &__right {
+      padding-left: system-spacing(sm);
+      text-align: right;
+    }
+  }
+}

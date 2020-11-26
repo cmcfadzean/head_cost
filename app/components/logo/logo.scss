@@ -1,0 +1,14 @@
+.system {
+  &-logo {
+    display: flex;
+    align-items: center;
+    &__img {
+      margin-right: system-spacing(xs);
+      height: 35px;
+    }
+    &__text {
+      font-weight: 700;
+      color: system-color(gray, 900);
+    }
+  }
+}

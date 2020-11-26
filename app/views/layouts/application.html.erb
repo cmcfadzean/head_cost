@@ -10,15 +10,10 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to current_user.email, edit_user_registration_path, :class => '#' %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => '#'  %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => '#'  %>
-      <%= link_to "Login", new_user_session_path, :class => '#'  %>
+    <%= component "header" do %>
+      <%= link_to 'Departments', departments_path %>
+      <%= link_to 'Employees', employees_path %>
     <% end %>
-    <%= link_to 'Departments', departments_path %>
-    <%= link_to 'Employees', employees_path %>
     <%= yield %>
     <%= component "alert", id: "notice", message: notice %>
     <%= component "alert", id: "alert", message: alert %>
