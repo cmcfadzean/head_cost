@@ -1,4 +1,4 @@
 <div class="system-nav">
-  <%= link_to 'Departments', departments_path, class: "system-nav__link" %>
-  <%= link_to 'Employees', employees_path, class: "system-nav__link" %>
+  <%= link_to 'Departments', departments_path, class: "system-nav__link #{current_class?(departments_path)}" %>
+  <%= link_to 'Employees', employees_path, class: "system-nav__link #{current_class?(employees_path)} #{current_class?('/')}" %>
 </div>

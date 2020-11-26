@@ -1,7 +1,7 @@
 .system {
   &-header {
     background: #fff;
-    padding: system-spacing(sm);
+    padding: 0 system-spacing(sm);
     border-bottom: system-border(default);
     &__content {
       display: flex;
