@@ -1,6 +1,7 @@
 .system {
   &-header {
     padding: system-spacing(sm);
+    border-bottom: system-border(default);
     &__content {
       display: flex;
       align-items: center;
