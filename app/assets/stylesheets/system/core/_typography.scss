@@ -7,24 +7,23 @@ body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  font-family: 'Inter', sans-serif;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   font-size: system-font-size();
   color: system-color(gray,700);
 }
-@supports (font-variation-settings: normal) {
-  body { font-family: 'Inter var', sans-serif; }
-}
 h1 {
-  font-weight: 900;
+  font-weight: 700;
   color: system-color(gray,900);
 }
 h2,h3,h4,h5,h6,strong {
-  font-weight: 900;
+  font-weight: 700;
   color: system-color(gray,900);
 }
 a {
   font-weight: 600;
+  color: system-color(gray,900);
   &:hover {
     text-decoration: none;
+    color: system-color(teal,500);
   }
 }
