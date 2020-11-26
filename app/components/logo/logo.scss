@@ -2,6 +2,7 @@
   &-logo {
     display: flex;
     align-items: center;
+    margin-right: system-spacing();
     &__img {
       margin-right: system-spacing(xs);
       height: 35px;

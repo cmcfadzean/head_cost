@@ -1,0 +1,12 @@
+.system {
+  &-heading {
+    border-bottom: system-border(default);
+    padding: system-spacing() 0;
+    display: flex;
+    align-items: center;
+    &__body {
+      flex: 1;
+      text-align: left;
+    }
+  }
+}

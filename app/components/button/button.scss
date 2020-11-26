@@ -1,0 +1,17 @@
+.system {
+  &-button {
+    font-size: system-font-size(sm);
+    padding: system-spacing(xs) system-spacing(sm);
+    border-radius: system-border(radius);
+    &--primary {
+      background: system-color(teal, 700);
+      color: #fff;
+    }
+    &--secondary {
+
+    }
+    i {
+      margin-right: system-spacing(2xs);
+    }
+  }
+}
