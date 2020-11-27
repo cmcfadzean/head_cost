@@ -1,0 +1,7 @@
+.system {
+  &-panel {
+    background: #fff;
+    border-radius: system-border(radius);
+    padding: system-spacing();
+  }
+}
