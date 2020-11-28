@@ -12,7 +12,8 @@
       }
     }
     &--secondary {
-
+      background: system-color(gray, 100);
+      border: 1px solid darken(system-color(gray, 100), 5%);
     }
     i {
       margin-right: system-spacing(2xs);

@@ -1,45 +1,60 @@
 <%= component "container" do %>
-  <%= component "heading", title: "Employees" do %>
+  <%= component "heading", title: "Staff" do %>
     <%= component "button", link: new_employee_path, type: "primary" do %>
       <i class="lni lni-plus"></i> Add Employee
     <% end %>
   <% end %>
-  <%= component "panel" do %>
-  <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Role</th>
-      <th>Department</th>
-      <th class="expand">Compensation</th>
-    </tr>
-  </thead>
+  <div class="row">
+    <div class="three columns">
+      <%= component "panel", title: "Departments" do %>
 
-  <tbody>
-    <% @employees.each do |employee| %>
-      <tr>
-        <td>
-          <%= link_to employee do %>
-            <div class="system-avatar"></div>
-            <div class="system-avatar__text"><%= employee.name %></div>
-          <% end %>
-        </td>
-        <td><%= employee.title %></td>
-        <td><%= employee.department.title %></td>
-        <td class="expand"><%= link_to employee_salaries_path(employee) do %>
-          <% if employee.salaries.last.nil? %>
-            Add Salary
-          <% else %>
-            <div class="system-item__stats">
-              <%= number_to_currency(employee.salaries.last.salary, :unit => "$") %> 
-              <%= time_ago_in_words(employee.salaries.last.effective) %> ago
-            </div>
-          <% end %>
-        <% end %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<% end %>
+      <% end %>
+    </div>
+    <div class="nine columns">
+      <%= component "panel", title: "Employees" do %>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Department</th>
+              <th class="expand">Compensation</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @employees.each do |employee| %>
+              <tr>
+                <td>
+                  <%= link_to employee do %>
+                    <div class="system-avatar"></div>
+                    <div class="system-avatar__text"><%= employee.name %></div>
+                  <% end %>
+                </td>
+                <td><%= employee.title %></td>
+                <td><%= employee.department.title %></td>
+                <td class="expand">
+                  <%= link_to employee_salaries_path(employee) do %>
+                    <% if employee.salaries.last.nil? %>
+                      <%= component "button", link: new_employee_salary_path(employee), type: "secondary" do %>
+                        Add Salary
+                      <% end %>
+                    <% else %>
+                      <%= link_to employee_salaries_path(employee) do %>
+                        <%= number_to_currency(employee.salaries.last.salary, :unit => "$") %> 
+                      <% end %>
+                      <%= component "label", type: "green" do %>
+                        <%= time_ago_in_words(employee.salaries.last.effective) %> ago
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+  </div>
 <% end %>
   <h2><%= number_to_currency(@total_cost, :unit => "$") %></h2>

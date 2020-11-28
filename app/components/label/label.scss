@@ -1,0 +1,14 @@
+.system {
+  &-label {
+    display: inline-block;
+    font-size: system-font-size(xs);
+    padding: 6px system-spacing(sm);
+    margin-left: system-spacing(sm);
+    font-weight: 600;
+    &--green {
+      border-radius: system-border(radius);
+      color: system-color(teal, 700);
+      background: system-color(teal, 100);
+    }
+  }
+}

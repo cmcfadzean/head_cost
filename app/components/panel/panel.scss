@@ -3,5 +3,10 @@
     background: #fff;
     border-radius: system-border(radius);
     padding: system-spacing();
+    margin-bottom: system-spacing();
+    &__title {
+      margin-bottom: system-spacing();
+      font-size: system-font-size(xl);
+    }
   }
 }
