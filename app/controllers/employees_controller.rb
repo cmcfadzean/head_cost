@@ -5,6 +5,7 @@ class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.json
   def index
+    @departments = current_user.departments
     @employees = current_user.employees
     @total_cost = BigDecimal.new(0)
     @employees.each do |employee|
