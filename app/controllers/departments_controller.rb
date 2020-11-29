@@ -15,6 +15,13 @@ class DepartmentsController < ApplicationController
   def show
     @departments = current_user.departments
     @employees = current_user.employees.where(:department => @department)
+    @total_cost = BigDecimal.new(0)
+    @employees.each do |employee|
+      unless employee.salaries.last.nil?
+        @salary = employee.salaries.last.salary
+        @total_cost += @salary
+      end
+    end
   end
 
   # GET /departments/new
