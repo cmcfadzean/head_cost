@@ -1,4 +1,7 @@
 <%= form_with(model: department, local: true) do |form| %>
+  <%= component "bar", cancel: employees_path, title: "Department" do %>
+    <%= form.submit %>
+  <% end %>
   <% if department.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(department.errors.count, "error") %> prohibited this department from being saved:</h2>
@@ -10,13 +13,12 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= component "container", size: "sm" do %><br>
+    <%= component "panel", title: "Details" do %>
+      <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: "u-full-width" %>
+      </div>
+    <% end %>
+  <% end %>
 <% end %>

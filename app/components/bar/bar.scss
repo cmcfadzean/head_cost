@@ -1,0 +1,14 @@
+.system-bar {
+  padding: system-spacing();
+  border-bottom: system-border(default);
+  display: flex;
+  align-items: center;
+  &__cancel {
+    padding-right: system-spacing();
+    margin-right: system-spacing();
+    border-right: system-border(default);
+  }
+  &__title {
+    flex-grow: 1;
+  }
+}

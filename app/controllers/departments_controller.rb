@@ -2,6 +2,8 @@ class DepartmentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_department, only: [:show, :edit, :update, :destroy]
 
+  layout 'form', :only => [:new, :edit]
+
   # GET /departments
   # GET /departments.json
   def index

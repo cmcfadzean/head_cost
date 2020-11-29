@@ -2,6 +2,8 @@ class EmployeesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
 
+  layout 'form', :only => [:new, :edit]
+
   # GET /employees
   # GET /employees.json
   def index

@@ -1,4 +1,7 @@
 <%= form_with(model: employee, local: true) do |form| %>
+  <%= component "bar", cancel: employees_path, title: "Employee" do %>
+    <%= form.submit %>
+  <% end %>
   <% if employee.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
@@ -10,23 +13,20 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :department_id %>
-    <%= form.collection_select :department_id, current_user.departments,:id,:title, include_blank: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= component "container", size: "sm" do %><br>
+    <%= component "panel", title: "Details" do %>
+      <div class="field">
+        <%= form.label :department_id %><br>
+        <%= form.collection_select :department_id, current_user.departments,:id,:title, include_blank: true %>
+      </div><br>
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "u-full-width" %>
+      </div><br>
+      <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: "u-full-width" %>
+      </div>
+    <% end %>
+  <% end %>
 <% end %>

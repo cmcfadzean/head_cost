@@ -1,8 +1,1 @@
-<%= component "container" do %>
-  <%= component "heading", title: "New Employee" do %>
-    <%= component "button", link: employees_path, type: "secondary" do %>
-      Cancel
-    <% end %>
-  <% end %>
-  <%= render 'form', employee: @employee %>
-<% end %>
+<%= render 'form', employee: @employee %>

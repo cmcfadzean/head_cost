@@ -2,5 +2,8 @@
   &-container {
     max-width: 1400px;
     margin: 0 auto;
+    &--sm {
+      max-width: 500px;
+    }
   }
 }
