@@ -1,5 +1,8 @@
-<h1>New Employee</h1>
-
-<%= render 'form', employee: @employee %>
-
-<%= link_to 'Back', employees_path %>
+<%= component "container" do %>
+  <%= component "heading", title: "New Employee" do %>
+    <%= component "button", link: employees_path, type: "secondary" do %>
+      Cancel
+    <% end %>
+  <% end %>
+  <%= render 'form', employee: @employee %>
+<% end %>
