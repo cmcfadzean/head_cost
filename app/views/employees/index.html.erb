@@ -6,23 +6,42 @@
   <% end %>
   <div class="row">
     <div class="three columns">
-      <%= component "panel", title: "Payroll" do %>
-        <h3><%= number_to_currency(@total_cost, :unit => "$") %></h3>
+      <div class="">
+        <%= link_to employees_path do %>
+          <i class="lni lni-layers"></i> 
+          All Departments
+        <% end %>
+      </div>
+      <% @departments.each do |department| %>
+        <div class="">
+          <%= link_to department do %>
+            <i class="lni lni-layers"></i> 
+            <%= department.title %>
+          <% end %>
+        </div>
       <% end %>
-      <%= component "panel", title: "Departments" do %>
-        <% @departments.each do |department| %>
-          <div class="">
-            <%= link_to department do %>
-              <%= department.title %>
-            <% end %>
-          </div>
-        <% end %>
-        <%= link_to new_department_path do %>
-          <i class="lni lni-plus"></i> New Department
-        <% end %>
+      <%= link_to new_department_path do %>
+        <i class="lni lni-plus"></i> New Department
       <% end %>
     </div>
     <div class="nine columns">
+      <div class="row">
+        <div class="four columns">
+          <%= component "panel", title: "Departments" do %>
+            <h3><%= @departments_count %></h3>
+          <% end %>
+        </div>
+        <div class="four columns">
+          <%= component "panel", title: "Employees" do %>
+            <h3><%= @employees_count %></h3>
+          <% end %>
+        </div>
+        <div class="four columns">
+          <%= component "panel", title: "Payroll" do %>
+            <h3><%= number_to_currency(@total_cost, :unit => "$") %></h3>
+          <% end %>
+        </div>
+      </div>
       <%= component "panel", title: "All Employees" do %>
         <table>
           <thead>

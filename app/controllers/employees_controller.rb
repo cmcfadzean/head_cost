@@ -8,7 +8,9 @@ class EmployeesController < ApplicationController
   # GET /employees.json
   def index
     @departments = current_user.departments
+    @departments_count = current_user.departments.count
     @employees = current_user.employees
+    @employees_count = current_user.employees.count
     @total_cost = BigDecimal.new(0)
     @employees.each do |employee|
       unless employee.salaries.last.nil?
