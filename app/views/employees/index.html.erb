@@ -6,23 +6,11 @@
   <% end %>
   <div class="row">
     <div class="three columns">
-      <div class="">
-        <%= link_to employees_path do %>
-          <i class="lni lni-layers"></i> 
-          All Departments
-        <% end %>
-      </div>
+      <%= component "pill", link: employees_path, icon: "layers", text: "All Departments", active: "#{current_class?(employees_path)}" %>
       <% @departments.each do |department| %>
-        <div class="">
-          <%= link_to department do %>
-            <i class="lni lni-layers"></i> 
-            <%= department.title %>
-          <% end %>
-        </div>
+        <%= component "pill", link: department, icon: "layers", text: department.title, active: "#{current_class?(department)}" %>
       <% end %>
-      <%= link_to new_department_path do %>
-        <i class="lni lni-plus"></i> New Department
-      <% end %>
+      <%= component "pill", link: new_department_path, icon: "plus", text: "New Department" %>
     </div>
     <div class="nine columns">
       <div class="row">

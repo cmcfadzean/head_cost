@@ -6,13 +6,13 @@
       margin: 0 system-spacing(sm);
       padding: system-spacing() 0;
       color: system-color(gray,600);
-      &--active {
-        color: system-color(gray,900);
-        border-bottom: 2px solid $system-primary;
-      }
       &:last-of-type {
         margin-right: 0;
       }
+    }
+    .active {
+      color: system-color(gray,900);
+      border-bottom: 2px solid $system-primary;
     }
   }
 }

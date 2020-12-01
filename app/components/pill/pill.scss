@@ -1,0 +1,15 @@
+.system-pill {
+  padding: system-spacing(sm);
+  border-radius: system-border(radius);
+  display: flex;
+  align-items: center;
+  i {
+    margin-right: system-spacing(sm);
+  }
+  &.active {
+    color: darken($system-primary, 15%);
+    border: 1px solid $system-primary;
+    background: lighten($system-primary, 53%);
+    box-shadow: inset 0 2px 4px 0 rgba(0,0,0,.06);
+  }
+}
