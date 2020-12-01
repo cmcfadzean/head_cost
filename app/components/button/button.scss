@@ -1,12 +1,10 @@
 .system {
   &-button {
-    font-size: system-font-size(sm);
-    padding: system-spacing(xs) system-spacing(sm);
-    border-radius: system-border(radius);
     &--primary {
       background: $system-primary;
-      border: 1px solid darken($system-primary, 2%);
+      border: 1px solid $system-primary;
       color: #fff;
+      margin-bottom: 0;
       &:hover {
         color: lighten($system-primary, 50%);
       }
