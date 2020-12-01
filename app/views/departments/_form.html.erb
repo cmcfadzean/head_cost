@@ -13,11 +13,18 @@
       </ul>
     </div>
   <% end %>
-  <%= component "container", size: "sm" do %><br>
-    <%= component "panel", title: "Details" do %>
-      <div class="field">
-        <%= form.label :title %>
-        <%= form.text_field :title, class: "u-full-width" %>
+  <%= component "container" do %><br>
+    <%= component "panel", title: "Details", size: "lg" do %>
+      <div class="row">
+        <div class="one-half column">
+          <div class="field">
+            <%= form.label :title %>
+            <%= form.text_field :title, class: "u-full-width" %>
+          </div>
+        </div>
+        <div class="one-half column">
+        
+        </div>
       </div>
     <% end %>
   <% end %>

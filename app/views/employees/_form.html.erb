@@ -13,19 +13,26 @@
       </ul>
     </div>
   <% end %>
-  <%= component "container", size: "sm" do %><br>
-    <%= component "panel", title: "Details" do %>
-      <div class="field">
-        <%= form.label :department_id %><br>
-        <%= form.collection_select :department_id, current_user.departments,:id,:title, include_blank: true %>
-      </div><br>
-      <div class="field">
-        <%= form.label :name %>
-        <%= form.text_field :name, class: "u-full-width" %>
-      </div><br>
-      <div class="field">
-        <%= form.label :title %>
-        <%= form.text_field :title, class: "u-full-width" %>
+  <%= component "container" do %><br>
+    <%= component "panel", title: "Details", size: "lg" do %>
+      <div class="row">
+        <div class="one-half column">
+          <div class="field">
+            <%= form.label :name %>
+            <%= form.text_field :name, class: "u-full-width" %>
+          </div><br>
+          <div class="field">
+            <%= form.label :title %>
+            <%= form.text_field :title, class: "u-full-width" %>
+          </div><br>
+          <div class="field">
+            <%= form.label :department_id %><br>
+            <%= form.collection_select :department_id, current_user.departments,:id,:title, include_blank: true %>
+          </div>
+        </div>
+        <div class="one-half column">
+        
+        </div>
       </div>
     <% end %>
   <% end %>

@@ -4,6 +4,9 @@
     border-radius: system-border(radius);
     padding: system-spacing();
     margin-bottom: system-spacing();
+    &--lg {
+      padding: 100px;
+    }
     &__title {
       margin-bottom: system-spacing();
       font-size: system-font-size(xl);

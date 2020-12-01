@@ -2,6 +2,8 @@ class SalariesController < ApplicationController
   before_action :set_employee
   before_action :set_salary, only: [:show, :edit, :update, :destroy]
 
+  layout 'form', :only => [:new, :edit]
+
   # GET employees/1/salaries
   def index
     @salaries = @employee.salaries
