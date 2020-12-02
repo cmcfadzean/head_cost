@@ -6,7 +6,7 @@
   <% end %>
   <div class="row">
     <div class="three columns">
-      <%= component "pill", link: employees_path, icon: "layers", text: "All Departments", active: "#{current_class?(employees_path)}" %>
+      <%= component "pill", link: employees_path, icon: "layers", text: "All Departments", active: "#{current_class?(employees_path)} #{current_class?('/')}" %>
       <% @departments.each do |department| %>
         <%= component "pill", link: department, icon: "layers", text: department.title, active: "#{current_class?(department)}" %>
       <% end %>

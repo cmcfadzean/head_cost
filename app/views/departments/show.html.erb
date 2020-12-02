@@ -1,29 +1,34 @@
 <%= component "container" do %>
   <%= component "heading", title: "Staff" do %>
+    <%= component "button", link: edit_department_path(@department), type: "secondary" do %>
+      Edit
+    <% end %>
+    <%= link_to 'Delete', @department, method: :delete, data: { confirm: 'Are you sure?' }, class: "button system-button system-button--secondary" %>
     <%= component "button", link: new_employee_path, type: "primary" do %>
       <i class="lni lni-plus"></i> Add Employee
     <% end %>
   <% end %>
   <div class="row">
     <div class="three columns">
-      <%= component "panel", title: "Payroll" do %>
-        <h3><%= number_to_currency(@total_cost, :unit => "$") %></h3>
+      <%= component "pill", link: employees_path, icon: "layers", text: "All Departments", active: "#{current_class?(employees_path)}" %>
+      <% @departments.each do |department| %>
+        <%= component "pill", link: department, icon: "layers", text: department.title, active: "#{current_class?("/departments/#{department.id}")}" %>
       <% end %>
-      <%= component "panel", title: "Departments" do %>
-        <% @departments.each do |department| %>
-          <div class="">
-            <%= link_to department do %>
-              <i class="lni lni-layers"></i> 
-              <%= department.title %>
-            <% end %>
-          </div>
-        <% end %>
-        <%= link_to new_department_path do %>
-          <i class="lni lni-plus"></i> New Department
-        <% end %>
-      <% end %>
+      <%= component "pill", link: new_department_path, icon: "plus", text: "New Department" %>
     </div>
     <div class="nine columns">
+      <div class="row">
+        <div class="one-half column">
+          <%= component "panel", title: "Employees" do %>
+            <h3><%= @employees_count %></h3>
+          <% end %>
+        </div>
+        <div class="one-half column">
+          <%= component "panel", title: "Payroll" do %>
+            <h3><%= number_to_currency(@total_cost, :unit => "$") %></h3>
+          <% end %>
+        </div>
+      </div>
       <%= component "panel", title: @department.title do %>
         <table>
           <thead>
@@ -70,7 +75,4 @@
     </div>
   </div>
 <% end %>
-<%= link_to 'Edit', edit_department_path(@department) %> |
-<%= link_to 'Back', departments_path %> |
-<%= link_to 'Destroy', @department, method: :delete, data: { confirm: 'Are you sure?' } %>
 

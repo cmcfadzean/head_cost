@@ -15,6 +15,7 @@ class DepartmentsController < ApplicationController
   def show
     @departments = current_user.departments
     @employees = current_user.employees.where(:department => @department)
+    @employees_count = current_user.employees.where(:department => @department).count
     @total_cost = BigDecimal.new(0)
     @employees.each do |employee|
       unless employee.salaries.last.nil?

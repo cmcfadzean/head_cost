@@ -1,17 +1,17 @@
 .system {
   &-button {
+    border-radius: system-border(radius);
+    margin-bottom: 0;
     &--primary {
       background: $system-primary;
-      border: 1px solid $system-primary;
+      border: none;
       color: #fff;
-      margin-bottom: 0;
       &:hover {
         color: lighten($system-primary, 50%);
       }
     }
     &--secondary {
-      background: system-color(gray, 100);
-      border: 1px solid darken(system-color(gray, 100), 5%);
+      background: #fff;
     }
     i {
       margin-right: system-spacing(2xs);

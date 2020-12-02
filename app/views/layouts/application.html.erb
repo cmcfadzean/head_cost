@@ -15,7 +15,6 @@
     <%= component "header" do %>
       <%= component "nav" do %>
         <%= link_to 'Staff', employees_path, class: "system-nav__link #{current_class?(employees_path)} #{current_class?('/')}" %>
-        <%= link_to 'Departments', departments_path, class: "system-nav__link #{current_class?(departments_path)}" %>
       <% end %>
     <% end %>
     <%= yield %>
