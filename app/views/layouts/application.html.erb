@@ -11,13 +11,17 @@
   </head>
 
   <body>
-    <%= component "header" do %>
+    <%= component "sidebar" do %>
       <%= component "nav" do %>
-        <%= link_to 'Staff', employees_path, class: "system-nav__link #{current_class?(employees_path)} #{current_class?('/')}" %>
+        <%= link_to employees_path, class: "system-nav__link #{current_class?(employees_path)} #{current_class?('/')}" do %>
+          <i class="lni lni-users"></i>
+        <% end %>
       <% end %>
     <% end %>
-    <%= yield %>
-    <%= component "footer" %>
+    <%= component "stage" do %>
+      <%= yield %>
+      <%= component "footer" %>
+    <% end %>
     <%= component "alert", id: "notice", message: notice %>
     <%= component "alert", id: "alert", message: alert %>
   </body>

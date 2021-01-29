@@ -1,0 +1,20 @@
+<div class="system-sidebar">
+  <div class="system-sidebar__content">
+    <div class="system-sidebar__top">
+      <%= component "logo" %>
+    </div>
+    <div class="system-sidebar__body">
+      <%= sidebar %>
+    </div>
+    <div class="system-sidebar__bottom">
+      <%= component "nav" do %>
+        <%= link_to edit_user_registration_path, class: "system-nav__link #{current_class?(edit_user_registration_path)}" do %>
+          <i class="lni lni-cog"></i>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete, :class => 'system-nav__link' do %>
+          <i class="lni lni-power-switch"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

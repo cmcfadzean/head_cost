@@ -1,11 +1,12 @@
 .system {
   &-logo {
-    display: flex;
-    align-items: center;
-    margin-right: system-spacing();
+    text-align: center;
+    display: block;
+    width: 40px;
+    margin: 0 auto;
+    margin-bottom: system-spacing();
     &__img {
-      margin-right: system-spacing(xs);
-      height: 35px;
+     
     }
   }
 }

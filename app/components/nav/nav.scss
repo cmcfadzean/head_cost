@@ -1,18 +1,15 @@
 .system {
   &-nav {
-    display: flex;
-    align-items: center;
     &__link {
-      margin: 0 system-spacing(sm);
-      padding: system-spacing() 0;
+      padding: system-spacing(xs) system-spacing(sm);
       color: system-color(gray,600);
-      &:last-of-type {
-        margin-right: 0;
-      }
+      display: block;
+      font-size: system-font-size(2xl);
     }
     .active {
-      color: system-color(gray,900);
-      border-bottom: 2px solid $system-primary;
+      color: $system-primary;
+      border-radius: system-border(radius);
+      background: lighten($system-primary, 53%);
     }
   }
 }
