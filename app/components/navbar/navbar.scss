@@ -1,0 +1,11 @@
+.system {
+  &-navbar {
+    background: #fff;
+    padding: 0 system-spacing(xs);
+    border-right: system-border();
+    &__title {
+      font-size: system-font-size(3xl);
+      margin: 21px 0;
+    }
+  }
+}

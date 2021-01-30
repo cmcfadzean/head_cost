@@ -16,6 +16,15 @@
         <%= link_to employees_path, class: "system-nav__link #{current_class?(employees_path)} #{current_class?('/')}" do %>
           <i class="lni lni-users"></i>
         <% end %>
+        <%= link_to employees_path, class: "system-nav__link #{current_class?('')} #{current_class?('')}" do %>
+          <i class="lni lni-folder"></i>
+        <% end %>
+        <%= link_to employees_path, class: "system-nav__link #{current_class?('')} #{current_class?('')}" do %>
+          <i class="lni lni-layers"></i>
+        <% end %>
+        <%= link_to employees_path, class: "system-nav__link #{current_class?('')} #{current_class?('')}" do %>
+          <i class="lni lni-link"></i>
+        <% end %>
       <% end %>
     <% end %>
     <%= component "stage" do %>
