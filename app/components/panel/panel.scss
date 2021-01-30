@@ -1,7 +1,6 @@
 .system {
   &-panel {
-    background: #fff;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: system-border();
     border-radius: system-border(radius);
     padding: system-spacing();
     margin-bottom: system-spacing();
