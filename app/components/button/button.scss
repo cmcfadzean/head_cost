@@ -1,7 +1,9 @@
 .system {
   &-button {
     border-radius: system-border(radius);
+    font-size: system-font-size(xs);
     margin-bottom: 0;
+    padding: system-spacing(sm) system-spacing();
     &--primary {
       background: $system-primary;
       border: none;

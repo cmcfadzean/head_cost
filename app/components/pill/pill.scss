@@ -10,10 +10,7 @@
     font-size: system-font-size(2xl);
   }
   &.active {
-    color: $system-secondary;
-    background: lighten($system-secondary, 45%);
-  }
-  &:hover {
-    color: $system-secondary;
+    color: $system-primary;
+    background: lighten($system-primary, 53%);
   }
 }
