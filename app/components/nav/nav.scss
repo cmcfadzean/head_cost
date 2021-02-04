@@ -2,6 +2,7 @@
   &-nav {
     &__link {
       padding: system-spacing(xs) system-spacing(sm);
+      margin-top: system-spacing();
       color: system-color(gray,600);
       display: block;
       font-size: system-font-size(2xl);
