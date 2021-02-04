@@ -1,9 +1,11 @@
 .system {
   &-button {
+    height: 40px;
     border-radius: system-border(radius);
-    font-size: system-font-size(xs);
+    line-height: 1;
+    font-size: system-font-size(sm);
     margin-bottom: 0;
-    padding: system-spacing(sm) system-spacing();
+    padding: 12px system-spacing();
     &--primary {
       background: $system-primary;
       border: none;
@@ -13,10 +15,23 @@
       }
     }
     &--secondary {
-      background: #fff;
+      background: system-color(grey, 200);
+      margin-right: system-spacing(sm);
     }
-    i {
-      margin-right: system-spacing(2xs);
-    }
+  }
+}
+input[type=submit] {
+  height: 40px;
+  font-weight: 700;
+  border-radius: system-border(radius);
+  line-height: 1;
+  font-size: system-font-size(sm);
+  margin-bottom: 0;
+  padding: 12px system-spacing();
+  background: $system-primary;
+  border: none;
+  color: #fff;
+  &:hover {
+    color: lighten($system-primary, 50%);
   }
 }

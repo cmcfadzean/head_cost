@@ -1,9 +1,10 @@
 <div class="system-bar">
-  <%= link_to bar.cancel, class: "system-bar__cancel" do %>
-    <i class="lni lni-close"></i>
-  <% end %>
+  <%= component "logo" %>
   <div class="system-bar__title"><%= bar.title %></div>
   <div class="system-bar__actions">
+    <%= component "button", link: bar.cancel, type: "secondary" do %>
+      Cancel
+    <% end %>
     <%= bar %>
   </div>
 </div>

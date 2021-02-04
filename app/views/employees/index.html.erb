@@ -9,34 +9,34 @@
   <%= component "heading" do %>
     <%= component "container" do %>
       <%= component "button", link: new_employee_path, type: "primary" do %>
-        <i class="lni lni-plus"></i> Add Employee
+        Add Employee
       <% end %>
     <% end %>
   <% end %>
   <%= component "container" do %>
-    <div class="row">
-      <div class="col-sm-12 col-md-4">
+    <%= component "grid_row" do %>
+      <%= component "grid_col", size: "4" do %>
         <%= component "panel", title: "Departments" do %>
           <h3><%= @departments_count %></h3>
         <% end %>
-      </div>
-      <div class="col-sm-12 col-md-4">
+      <% end %>
+      <%= component "grid_col", size: "4" do %>
         <%= component "panel", title: "Employees" do %>
           <h3><%= @employees_count %></h3>
         <% end %>
-      </div>
-      <div class="col-sm-12 col-md-4">
+      <% end %>
+      <%= component "grid_col", size: "4" do %>
         <%= component "panel", title: "Payroll" do %>
           <h3><%= number_to_currency(@total_cost, :unit => "$") %></h3>
         <% end %>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
     <table>
       <tbody>
         <% @employees.each do |employee| %>
           <tr>
             <td>
-              <%= link_to employee do %>
+              <%= link_to edit_employee_path(employee) do %>
                 <div class="system-avatar"></div>
                 <div class="system-avatar__text"><strong><%= employee.name %></strong><br><%= employee.title %> in <u><%= employee.department.title %></u></div>
               <% end %>

@@ -1,0 +1,17 @@
+.system-field {
+  display: block;
+  label {
+    font-size: system-font-size(lg);
+    margin-bottom: system-spacing(xs);
+    font-weight: 600;
+    display: block;
+  }
+  input, select {
+    border-radius: system-border(radius);
+    border: system-border();
+    padding: system-spacing(sm);
+    margin-bottom: system-spacing();
+    display: block;
+    width: 100%;
+  }
+}

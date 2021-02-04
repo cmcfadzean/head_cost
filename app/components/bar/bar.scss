@@ -1,6 +1,7 @@
 .system-bar {
   padding: system-spacing();
   border-bottom: system-border(default);
+  margin-bottom: system-spacing();
   display: flex;
   align-items: center;
   &__cancel {
