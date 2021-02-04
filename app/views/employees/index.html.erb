@@ -1,9 +1,9 @@
 <%= component "navbar", title: "Staff" do %>
-  <%= component "pill", link: employees_path, icon: "users", text: "All Departments", active: "#{current_class?(employees_path)} #{current_class?('/')}" %>
+  <%= component "pill", link: employees_path, text: "All Departments", active: "#{current_class?(employees_path)} #{current_class?('/')}" %>
   <% @departments.each do |department| %>
-    <%= component "pill", link: department, icon: "users", text: department.title, active: "#{current_class?(department)}" %>
+    <%= component "pill", link: department, text: department.title, active: "#{current_class?(department)}" %>
   <% end %>
-  <%= component "pill", link: new_department_path, icon: "plus", text: "New Department" %>
+  <%= component "pill", link: new_department_path, text: "New Department" %>
 <% end %>
 <%= component "stage" do %>
   <%= component "heading" do %>
